@@ -1,0 +1,36 @@
+
+<head>
+        <title>hello</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+
+</head>
+
+    <div ng-app="" ng-controller="personctrl">
+<p>
+    FirstName : <input type="text" ng-model="firstname" >
+    LastName : <input type="text" ng-model="lastname">
+</p></br>
+<p>
+<input type="submit"value="add"  id="btn" ng-click="addusers()">
+<h2>{{persons.firstname}}</h2>
+</p>
+<script>
+
+timeBomb.controller('personctrl', function($scope) {
+
+
+$scope.persons=[];
+$scope.firstname="";
+    $scope.lastname="";
+$scope.addusers=function(){
+
+
+    var users={
+       firstname:$scope.firstname,
+        lastname:$scope.lastname
+    };
+     $scope.persons.push(users);
+}
+});
+</script>
+    </div>
